@@ -105,7 +105,7 @@ Format data menu (mulai baris ke-3):
 
 > **Catatan:** Setiap kali kamu mengubah kode (`Code.gs` atau `index.html`), kamu perlu deploy ulang agar perubahan aktif. Caranya: klik **Deploy** → **Manage deployments** → klik ikon edit (pensil) → klik kolom **Version** dan pilih **New version** → klik **Deploy**.
 >
-> Perubahan data di Sheets langsung aktif tanpa deploy ulang (setelah cache habis, maksimal 30 detik).
+> Perubahan data di Sheets langsung aktif tanpa deploy ulang (setelah cache habis, maksimal 300 detik).
 
 ---
 
@@ -150,10 +150,10 @@ Ubah kolom `status` item menu dari `aktif` menjadi apapun (misalnya `tidak aktif
 
 ### Cache Data
 
-Defaultnya data di-cache selama **30 detik** untuk menghemat kuota baca Sheets. Bisa diubah di `Code.gs`:
+Defaultnya data di-cache selama **300 detik** untuk menghemat kuota baca Sheets. Bisa diubah di `Code.gs`:
 
 ```javascript
-var CACHE_SECONDS = 30; // ubah sesuai kebutuhan
+var CACHE_SECONDS = 300; // ubah sesuai kebutuhan
 ```
 
 ---
@@ -170,7 +170,7 @@ Jika menggunakan **Google Drive**, link biasa dari tombol Share tidak bisa langs
 4. Tempel link Hasil ke kolom `gambar` (untuk foto menu) atau `logo` (untuk foto profil toko)
 
 **Q: Perubahan di Sheets tidak langsung terlihat?**
-Normal — data di-cache hingga 30 detik. Tunggu sebentar atau ubah `CACHE_SECONDS` ke nilai lebih kecil di `Code.gs`.
+Normal — data di-cache hingga 300 detik. Tunggu sebentar atau ubah `CACHE_SECONDS` ke nilai lebih kecil di `Code.gs`.
 
 **Q: Apakah bisa dipakai untuk lebih dari satu toko?**
 Bisa. Cukup buat Spreadsheet baru dan ulangi proses deploy dari awal untuk setiap toko.
